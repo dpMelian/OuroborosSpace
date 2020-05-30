@@ -1,3 +1,16 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.zoom-background {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.zoom-background img {
+    transition: all 0.5s ease;
+}
+
+.zoom-background:hover img {
+    transform: scale(1.25);
+}
