@@ -7,6 +7,65 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+          <img src="images/logo.png" width="100" height="100" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item <%= current_class?(root_path) %>">
+                <%= link_to "Home", root_path, class: 'nav-link' %>
+              </li>
+              <li class="nav-item  <%= current_class?(noticias_path) %>">
+                <%= link_to "Noticias", noticias_path, class: 'nav-link'%>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Planetas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Mercurio</a>
+                  <a class="dropdown-item" href="#">Venus</a>
+                  <a class="dropdown-item" href="#">La Tierra</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Ver todos</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Estrellas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Sol</a>
+                  <a class="dropdown-item" href="#">Betelgeuse</a>
+                  <a class="dropdown-item" href="#">Próxima Centauri</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Ver todas</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Galaxias
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Vía Láctea</a>
+                  <a class="dropdown-item" href="#">Andrómeda</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Ver todas</a>
+                </div>
+              </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+      </div>
+    </nav>
   </head>
 
   <body>
