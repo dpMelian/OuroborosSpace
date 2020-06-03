@@ -1,0 +1,20 @@
+<%= form_tag 'login', method: :post do |form| %>
+  <div class="field">
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'Contraseña' %>
+    <%= password_field_tag :password %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'Confirmación de la contraseña' %>
+    <%= password_field_tag :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag "Login" %>
+  </div>
+<% end %>

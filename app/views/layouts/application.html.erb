@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OuroborosSpace</title>
+    <title>Ouroboros Space</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,8 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-          <img src="images/logo.png" width="100" height="100" alt="logo">
+      <a class="navbar-brand" href="<%= root_path %>">
+          <%= image_tag("/images/logo.png", size: "100x100", alt: "logo") %>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -18,10 +18,10 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-              <li class="nav-item <%= current_class?(root_path) %>">
+              <li class="nav-item <%= 'active' if params[:controller] == 'home' %> %>">
                 <%= link_to "Home", root_path, class: 'nav-link' %>
               </li>
-              <li class="nav-item  <%= current_class?(noticias_path) %>">
+              <li class="nav-item  <%= 'active' if params[:controller] == 'noticias' %>">
                 <%= link_to "Noticias", noticias_path, class: 'nav-link'%>
               </li>
               <li class="nav-item dropdown">

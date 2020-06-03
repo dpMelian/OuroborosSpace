@@ -1,0 +1,33 @@
+<%= form_with(model: usuario, local: true) do |form| %>
+  <% if usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+        <% usuario.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form">
+    <div class="field form-group">
+      <%= form.label 'Nombre de usuario' %>
+      <%= form.text_field :username %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label 'Rol' %>
+      <%= form.select :rol, options_for_select(['Administrador', 'Editor']) %>
+    </div>
+
+    <div class="field form-group">
+      <%= form.label 'Contraseña' %>
+      <%= form.password_field :password %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+<% end %>

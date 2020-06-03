@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  resources :usuarios
   resources :noticias
   get 'home/index'
   root 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+# get 'signup', to: 'usuarios#new', as: 'signup'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+  resources :sessions, only: [:new, :create, :destroy]
 end
