@@ -1,17 +1,12 @@
 <%= form_tag 'login', method: :post do |form| %>
   <div class="field">
     <%= label_tag :username %>
-    <%= text_field_tag :username %>
+    <%= text_field_tag :username, 'admin' %>
   </div>
 
   <div class="field">
     <%= label_tag 'Contraseña' %>
-    <%= password_field_tag :password %>
-  </div>
-
-  <div class="field">
-    <%= label_tag 'Confirmación de la contraseña' %>
-    <%= password_field_tag :password_confirmation %>
+    <%= password_field_tag :password, 'admin' %>
   </div>
 
   <div class="actions">

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :verify_authenticity_token, raise: false
   def new
   end
 
@@ -7,12 +8,9 @@ class SessionsController < ApplicationController
     if usuario && usuario.authenticate(params[:password])
       session[:usuario_id] = usuario.id
       session[:usuario_rol] = usuario.rol
-      # redirect_to root_url
-      redirect_to root_url
       flash[:notice] = "Inicio de sesión correcto"
+      redirect_to root_url
 
-      # flash[:success] = "Inicio de sesión correcto, bienvenido/a " +
-        # usuario.username + "."
     else
       flash.now[:warning] = "Nombre de usuario o contraseña incorrectos"
       render "new"
