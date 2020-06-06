@@ -1,15 +1,31 @@
-<%= form_tag 'login', method: :post do |form| %>
-  <div class="field">
-    <%= label_tag :username %>
-    <%= text_field_tag :username, 'admin' %>
+<div class="card border-dark mt-2" style="width: 18rem;"">
+  <div class="card-header text-center">
+    <%= image_tag("/images/logo.png", size: "100x100", alt: "logo") %>
+    <br>
+    <%= image_tag("/images/logo_title.png", size: "180x51", alt: "logo") %>
   </div>
+  <div class="card-body">
+    <h1 class="h3 mb-3 font-weight-normal text-center">Iniciar sesión</h1>
+    <div class="form">
+      <%= form_tag 'login', method: :post do |form| %>
+        <div class="form-group">
+          <div class="field">
+            <%= label_tag :username %>
+            <%= text_field_tag :username, 'admin', :style => "width:100%;" %>
+          </div>
+        </div>
 
-  <div class="field">
-    <%= label_tag 'Contraseña' %>
-    <%= password_field_tag :password, 'admin' %>
-  </div>
+        <div class="form-group">
+          <div class="field">
+            <%= label_tag 'Contraseña' %>
+            <%= password_field_tag :password, 'admin', :style => "width:100%;" %>
+          </div>
+        </div>
 
-  <div class="actions">
-    <%= submit_tag "Login" %>
+        <div class="actions text-center">
+          <%= submit_tag "Iniciar sesión", class: 'btn btn btn-secondary' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>

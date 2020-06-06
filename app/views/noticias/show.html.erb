@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>
+    <%= @noticia.titulo %>
+  </h1>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @noticia.titulo %>
-</p>
+  <p class="text-justify">
+    <%= @noticia.contenido %>
+  </p>
+</div>
 
-<p>
-  <strong>Contenido:</strong>
-  <%= @noticia.contenido %>
-</p>
-
-<%= link_to 'Edit', edit_noticia_path(@noticia) %> |
-<%= link_to 'Back', noticias_path %>
+<% if session[:usuario_rol] == 'Administrador' %>
+  <%= link_to 'Editar', edit_noticia_path(@noticia) %> |
+  <%= link_to 'Atrás', noticias_path %>
+<% end %>
