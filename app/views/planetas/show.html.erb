@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @planeta.nombre %>
+</p>
+
+<p>
+  <strong>Foto:</strong>
+  <%= @planeta.foto %>
+</p>
+
+<p>
+  <strong>Fecha descubrimiento:</strong>
+  <%= @planeta.fecha_descubrimiento %>
+</p>
+
+<p>
+  <strong>Masa en tierras:</strong>
+  <%= @planeta.masa_en_tierras %>
+</p>
+
+<p>
+  <strong>Periodo rotacion:</strong>
+  <%= @planeta.periodo_rotacion %>
+</p>
+
+<p>
+  <strong>Periodo orbital:</strong>
+  <%= @planeta.periodo_orbital %>
+</p>
+
+<p>
+  <strong>Gravedad:</strong>
+  <%= @planeta.gravedad %>
+</p>
+
+<%= link_to 'Edit', edit_planeta_path(@planeta) %> |
+<%= link_to 'Back', planetas_path %>

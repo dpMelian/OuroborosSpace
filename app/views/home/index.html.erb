@@ -7,14 +7,16 @@
         <div class="col-md-4 d-flex align-items-stretch">
             <div class="card text-white bg-secondary mb-3">
                 <div class="zoom-background">
-                    <%= image_tag("/images/planets.jpg", class: "card-img-top", alt: "Card image cap") %>
+                    <%= link_to planetas_path do %>
+                      <%= image_tag("/images/planets.jpg", class: "card-img-top", alt: "Card image cap") %>
+                    <% end %>
                 </div>
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-center">Planetas</h5>
                     <p class="card-text">
                         Un planeta es un objeto astronómico que orbita una estrella.
                     </p>
-                    <a href="#" class="mt-auto btn btn-dark">Ver</a>
+                    <%= link_to "Ver", planetas_path, class: 'mt-auto btn btn-dark' %>
                 </div>
             </div>
         </div>
@@ -80,5 +82,4 @@
         Quisque et tristique eros, vel aliquam leo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus placerat orci in congue hendrerit.
         Donec quis orci in ipsum congue dictum ut sit amet eros. Vestibulum congue dolor a enim pharetra, a consequat nisl dignissim. Nam laoreet urna sed
         luctus faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis a lorem hendrerit, molestie urna ut, pretium urna.</p>
-    </p>
 </div>

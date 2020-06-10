@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  foto: MyString
+  fecha_descubrimiento: MyString
+  masa_en_tierras: 9.99
+  periodo_rotacion: MyString
+  periodo_orbital: MyString
+  gravedad: 9.99
+
+two:
+  nombre: MyString
+  foto: MyString
+  fecha_descubrimiento: MyString
+  masa_en_tierras: 9.99
+  periodo_rotacion: MyString
+  periodo_orbital: MyString
+  gravedad: 9.99

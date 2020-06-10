@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :planetas
   resources :usuarios
   resources :noticias
   get 'home/index'

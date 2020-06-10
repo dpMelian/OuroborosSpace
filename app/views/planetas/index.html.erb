@@ -1,0 +1,72 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Planetas</h1>
+
+  <% if session[:usuario_rol] == 'Administrador' %>
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Foto</th>
+            <th>Fecha descubrimiento</th>
+            <th>Masa en tierras</th>
+            <th>Periodo rotación</th>
+            <th>Periodo orbital</th>
+            <th>Gravedad</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @planetas.each do |planeta| %>
+            <tr>
+              <td><%= planeta.nombre %></td>
+              <td><%= planeta.foto %></td>
+              <td><%= planeta.fecha_descubrimiento %></td>
+              <td><%= planeta.masa_en_tierras %></td>
+              <td><%= planeta.periodo_rotacion %></td>
+              <td><%= planeta.periodo_orbital %></td>
+              <td><%= planeta.gravedad %></td>
+              <td><%= link_to 'Ver', planeta %></td>
+              <td><%= link_to 'Editar', edit_planeta_path(planeta) %></td>
+              <td><%= link_to 'Eliminar', planeta, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <br>
+
+    <%= link_to 'Nuevo planeta', new_planeta_path %>
+
+  <% else %>
+    <% @planetas.each do |planeta| %>
+      <div class="container">
+        <div class="card border-dark mb-3" >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <%= image_tag("/images/" + planeta.foto, class: "card-img", alt: "Card image cap") %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h2 class="card-title"><%= planeta.nombre %></h2>
+                <strong>Fecha de descubrimiento:</strong>
+                <p class="card-text"><%= planeta.fecha_descubrimiento %></p>
+                <strong>Masa:</strong>
+                <p class="card-text"><%= (Planeta.masa_de_la_tierra * planeta.masa_en_tierras).to_f %> kg (<%= planeta.masa_en_tierras.truncate(3) %> Tierras)</p>
+                <strong>Periodo de rotación:</strong>
+                <p class="card-text"><%= planeta.periodo_rotacion %></p>
+                <strong>Periodo orbital:</strong>
+                <p class="card-text"><%= planeta.periodo_orbital %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+
+</div>
