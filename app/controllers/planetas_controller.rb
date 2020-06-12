@@ -69,6 +69,6 @@ class PlanetasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def planeta_params
-      params.require(:planeta).permit(:nombre, :foto, :fecha_descubrimiento, :masa_en_tierras, :periodo_rotacion, :periodo_orbital, :gravedad)
+      params.require(:planeta).permit(:nombre, :foto, :fecha_descubrimiento, :masa_en_tierras, :periodo_rotacion, :periodo_orbital, :gravedad, :posicion)
     end
 end
